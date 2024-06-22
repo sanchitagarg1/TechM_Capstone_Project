@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.files.entites.BookData;
+import com.files.entites.BookDataDao;
 import com.files.entites.Data;
 import com.files.entites.Datadao;
 
@@ -56,11 +58,11 @@ public class ULoginServlet extends HttpServlet {
 		
 		if(user!=null) 
 		{
-			request.setAttribute("name", user.getName());
-			request.setAttribute("email", user.getEmail());
-			request.setAttribute("phone", user.getPhone());
-			request.setAttribute("Address", user.getAddress());
-			request.setAttribute("Role", user.getRole());
+//			request.setAttribute("name", user.getName());
+//			request.setAttribute("email", user.getEmail());
+//			request.setAttribute("phone", user.getPhone());
+//			request.setAttribute("Address", user.getAddress());
+//			request.setAttribute("Role", user.getRole());
 			
 			HttpSession session=request.getSession();
 			session.setAttribute("name", user.getName());
@@ -70,7 +72,39 @@ public class ULoginServlet extends HttpServlet {
 		{
 			System.out.println("getRole:" + user.getRole());
 			System.out.println("Admin Welcome");
-			RequestDispatcher rd = request.getRequestDispatcher("AdminProfile.jsp?Page=1");
+			
+			
+			
+			
+//	--------------------- line 498 onward from AdminProfile -----------------------
+			
+			int pages = 1; 
+			int total = 7;
+			int offset = (pages > 1) ? (pages - 1) * total : 0;
+			BookDataDao dao = new BookDataDao();
+			List<BookData> records = dao.getRecords(offset, total);
+			
+			session.setAttribute("bookRecords", records);
+			
+			
+			
+			
+//			--------------------- line 563 onward from AdminProfile -----------------------
+			
+			int pg=1;
+			int total1=8;
+			if(pg==1){
+				pg--; 
+			}else {
+                pg=(pg-1)*total1; 
+            } 
+			List<Data> record = d1.getRecords(pg, total1);
+			session.setAttribute("record", record);
+			
+			
+			
+			
+			RequestDispatcher rd = request.getRequestDispatcher("AdminProfile.jsp");
 			rd.forward(request, response);
 		
 		}
@@ -135,7 +169,7 @@ public class ULoginServlet extends HttpServlet {
             String sql = "SELECT * FROM tourpackage";
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            // Execute the query
+            // Execute the query	
             ResultSet rs = stmt.executeQuery();
             System.out.println(rs + " this is the data from table");
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Hibernate Configuration DTD -->
+<!ELEMENT hibernate-configuration (session-factory, security?)>
+<!ELEMENT session-factory (property*, mapping*, class-cache*, collection-cache*, event*, listener*)>
+<!ELEMENT property (#PCDATA)>
+    <!ATTLIST property name CDATA #REQUIRED>
+<!ELEMENT mapping EMPTY>
+    <!ATTLIST mapping resource CDATA #IMPLIED
+                   file CDATA #IMPLIED
+                   jar CDATA #IMPLIED
+                   package CDATA #IMPLIED
+                   class CDATA #IMPLIED>
+<!ELEMENT class-cache EMPTY>
+    <!ATTLIST class-cache class CDATA #REQUIRED
+                            usage CDATA #REQUIRED
+                            region CDATA #IMPLIED
+                            include CDATA #IMPLIED>
+<!ELEMENT collection-cache EMPTY>
+    <!ATTLIST collection-cache collection CDATA #REQUIRED
+                               usage CDATA #REQUIRED
+                               region CDATA #IMPLIED>
+<!ELEMENT event EMPTY>
+    <!ATTLIST event type CDATA #REQUIRED
+                        class CDATA #REQUIRED>
+<!ELEMENT listener EMPTY>
+    <!ATTLIST listener type CDATA #REQUIRED
+                          class CDATA #REQUIRED>
+<!ELEMENT security (grant*)>
+<!ELEMENT grant EMPTY>
+    <!ATTLIST grant role CDATA #REQUIRED
+                        entity-name CDATA #REQUIRED
+                        actions CDATA #IMPLIED>

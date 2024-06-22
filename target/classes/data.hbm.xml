@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+    <class name="com.files.entites.Data" table="tourdata">
+        
+        <id name="phone" type="long">
+            <column name="phone"/>
+            <generator class="assigned"/>
+        </id>
+        
+        
+        <property name="name" type="string">
+            <column name="name"/>
+        </property>
+        <property name="email" type="string">
+            <column name="email"/>
+        </property>
+        <property name="password" type="string">
+            <column name="password"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role"/>
+        </property>
+
+        <property name="imageFileName" type="string">
+            <column name="imagefilename"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.files.entites.BookDataDao"%>
@@ -458,7 +459,16 @@
 </head>
 
 <body>
-    <% String Adminname=(String)session.getAttribute("email"); if(Adminname.isBlank()) { } else { %>
+    <% 
+    String Adminname = (String) session.getAttribute("email"); 
+    
+    if (Adminname == null || Adminname.isEmpty()) {
+        response.sendRedirect("InvalidAccess.jsp");
+    } else { 
+%>
+    <div>
+    	Hello
+    </div>
         <div class="container">
             <div class="box">
                 <button class="formbtn" id="btn">Bookings</button>
@@ -484,6 +494,8 @@
                 dao.getRecords(pages, total);
                 %> --%>
                 
+                
+<%-- 
                 <%
 int pages = Integer.parseInt(request.getParameter("Page")); 
 int total = 7;
@@ -493,7 +505,7 @@ int offset = (pages > 1) ? (pages - 1) * total : 0;
 
 BookDataDao dao = new BookDataDao();
 List<BookData> records = dao.getRecords(offset, total);
-%> 
+%> --%>
 
                 <div class="Book">
                     <i class="fas fa-times" id="form-close"></i>
@@ -508,7 +520,7 @@ List<BookData> records = dao.getRecords(offset, total);
                                 <th>Where From</th>
                                 <th>Booking Time</th>
                             </tr>
-                            <% for(BookData u :records) { %>
+                            <% for(BookData u :(List<BookData>) session.getAttribute("bookingRecords")) { %>
                                 <tr class="Tabledata">
                                     <td>
                                         <%= u.getDestination()%>
@@ -534,20 +546,26 @@ List<BookData> records = dao.getRecords(offset, total);
                                 </tr>
                                 <% } %>
                         </table>
+                        
+                     <%-- 
                         <% /* String name1=(String)request.getAttribute("name"); */ int count=dao.countRecords(); int
                             pagess=count/total; int mod=count%total; int npages=0; if(mod==0) { npages=pagess; } else {
                             npages=pagess+1; } if(npages!=0) { for(int i=1;i<=npages;i++) { %>
+                            
                             <a href='AdminProfile.jsp?Page=<%=i%>&inemail=<%=request.getParameter("inemail")%>'>Page
                                 <%=i%></a>
-                            <% } } %>
+                                
+                            <% } } %>  --%>
+                            
                     </div>
                 </div>
 
+<%-- 
                 <% int pg=Integer.parseInt(request.getParameter("Page")); int total1=8; if(pg==1) { pg--; } else {
                     pg=(pg-1)*total1; } Datadao dao2=new Datadao(); List<Data> record = dao2.getRecords(pg, total1);
-                    %>
+                    %>  --%>
 
-                    <div class="SeeUser">
+             	       <div class="SeeUser">
                         <i class="fas fa-times" id="form-close1"></i>
                         <div class="data">
                             <table width='100%' border='5'>
@@ -559,7 +577,7 @@ List<BookData> records = dao.getRecords(offset, total);
                                     <th>Password</th>
                                     <th>update/Delete</th>
                                 </tr>
-                                <% for(Data u :record) { %>
+                                <% for(Data u :(List<Data>) session.getAttribute("record")) { %>
                                     <tr class="Tabledata">
                                         <td>
                                             <%= u.getName()%>
@@ -583,12 +601,14 @@ List<BookData> records = dao.getRecords(offset, total);
                                     </tr>
                                     <% } %>
                             </table>
+                            
+                   <%-- 
                             <% int count1=dao2.countRecords(); int pagess1=count/total; int mod1=count%total; int
                                 npages1=0; if(mod==0) { npages1=pagess1; } else { npages1=pagess1+1; } if(npages1!=0) {
                                 for(int i=1;i<=npages1;i++) { %>
                                 <a href='AdminProfile.jsp?Page=<%=i%>&inemail=<%=request.getParameter("inemail")%>'>Page
                                     <%=i%></a>
-                                <% } } %>
+                                <% } } %>  --%>
 
                         </div>
                     </div>

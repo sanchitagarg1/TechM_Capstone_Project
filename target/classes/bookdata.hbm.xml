@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+<class name="com.files.entites.BookData" table="booking">
+
+        <id name="phone" type="long">
+            <column name="phone"/>
+            <generator class="assigned"/>
+        </id>
+      
+        <property name="Destination" type="string">
+            <column name="destination"/>
+        </property>
+        <property name="From" type="string">
+            <column name="WhereFrom"/>
+        </property>
+        <property name="Guests" type="int">
+            <column name="guests"/>
+        </property>
+
+        <property name="Arrival" type="string">
+            <column name="arrival"/>
+        </property>
+        <property name="Leaving" type="string">
+            <column name="leaving"/>
+        </property>
+        <property name="booking_Time" type="string">
+            <column name="BookingTime"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>
