@@ -466,9 +466,7 @@
         response.sendRedirect("InvalidAccess.jsp");
     } else { 
 %>
-    <div>
-    	Hello
-    </div>
+
         <div class="container">
             <div class="box">
                 <button class="formbtn" id="btn">Bookings</button>

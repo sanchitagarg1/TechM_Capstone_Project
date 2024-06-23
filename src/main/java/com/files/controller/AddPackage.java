@@ -153,6 +153,7 @@ public class AddPackage extends HttpServlet {
             stmt.close();
             con.close();
 
+            System.out.println("data from tourpackage" + tourPackages);
             // Set the tourPackages list as an attribute in the request object
             request.setAttribute("tourPackages", tourPackages);
 
