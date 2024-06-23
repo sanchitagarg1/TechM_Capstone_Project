@@ -11,7 +11,8 @@ public class Datadao {
     public Data checklogin(String email, String password) {
         Data data = null;
         Transaction transaction = null;
-        try (Session session = HibernateUtil.getSession()) {
+        
+        try(Session session = HibernateUtil.getSession())  {
             transaction = session.beginTransaction();
             String hql = "FROM Data WHERE email = :email AND password = :password";
             Query<Data> query = session.createQuery(hql, Data.class);
@@ -104,20 +105,21 @@ public class Datadao {
 
     public List<Data> getRecords(int start, int total) {
         List<Data> users = null;
-        Transaction transaction = null;
+//        Transaction transaction = null;
         try (Session session = HibernateUtil.getSession()) {
+        	 Transaction transaction = session.getTransaction();
             transaction = session.beginTransaction();
             String hql = "FROM Data";
             Query<Data> query = session.createQuery(hql, Data.class);
-            query.setFirstResult(start - 1);
-            query.setMaxResults(total);
+//            query.setFirstResult(start - 1);
+//            query.setMaxResults(total);
 
             users = query.list();
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
+//            if (transaction != null && transaction.isActive()) {
+////                transaction.rollback();
+//            }
             e.printStackTrace();
         }
         return users;

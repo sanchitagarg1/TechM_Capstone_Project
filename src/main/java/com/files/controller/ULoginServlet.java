@@ -55,6 +55,10 @@ public class ULoginServlet extends HttpServlet {
 		
 		Datadao d1 = new Datadao();
 		Data user = d1.checklogin(email, password);
+//		Data user = new Data();
+//		user.setName("abc");
+//		user.setPassword("abc");
+//		user.setRole("Admin");
 		
 		if(user!=null) 
 		{

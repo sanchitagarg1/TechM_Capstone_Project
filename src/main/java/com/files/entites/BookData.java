@@ -1,5 +1,8 @@
 package com.files.entites;
 
+//import javax.persistence.Entity;
+
+//@Entity
 public class BookData {
 		String Destination,From;
 		int Guests;

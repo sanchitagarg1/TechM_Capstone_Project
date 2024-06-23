@@ -16,15 +16,17 @@ public class BookDataDao {
 
     public List<BookData> getRecords(int start, int total) {
         List<BookData> users = null;
+       
+        
+        
         Transaction transaction = null;
-
-        try (Session session = HibernateUtil.getSession()) {
+        try(Session session = HibernateUtil.getSession()) {
             transaction = session.beginTransaction();
 
             String hql = "FROM BookData ORDER BY booking_Time DESC";
             Query<BookData> query = session.createQuery(hql, BookData.class);
-            query.setFirstResult(start - 1); 
-            query.setMaxResults(total);
+//            query.setFirstResult(start - 1); 
+//            query.setMaxResults(total);
 
             users = query.list();
             transaction.commit();

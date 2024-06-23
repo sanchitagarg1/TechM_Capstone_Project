@@ -520,7 +520,7 @@ List<BookData> records = dao.getRecords(offset, total);
                                 <th>Where From</th>
                                 <th>Booking Time</th>
                             </tr>
-                            <% for(BookData u :(List<BookData>) session.getAttribute("bookingRecords")) { %>
+                            <% for(BookData u :(List<BookData>) session.getAttribute("bookRecords")) { %>
                                 <tr class="Tabledata">
                                     <td>
                                         <%= u.getDestination()%>
