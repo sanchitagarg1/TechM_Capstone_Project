@@ -1,14 +1,40 @@
 package com.files.entites;
 
+//import javax.persistence.Column;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
+
 //import javax.persistence.Entity;
 
 //@Entity
+//@Table(name = "BOOKING")
 public class BookData {
-		String Destination,From;
-		int Guests;
+	
+//		@Id
+//	    @Column(name = "PHONE", nullable = false)
 		long Phone;
-		String Arrival,Leaving;
+	
+//		@Column(name = "DESTINATION")
+		String Destination;
+		
+//		@Column(name = "WHEREFROM")
+		String From;
+		
+//		@Column(name = "GUESTS")
+		int Guests;
+		
+
+//		@Column(name = "ARRIVAL")
+		String Arrival;
+		
+//		@Column(name = "LEAVING")
+		String Leaving;
+		
+//		@Column(name = "BOOKINGTIME")
 		String booking_Time;
+		
+		
+		
 		public String getDestination() {
 			return Destination;
 		}
