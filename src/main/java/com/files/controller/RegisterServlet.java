@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.files.entites.Data;
-import com.files.entites.Datadao;
+import com.files.entities.Data;
+import com.files.entities.Datadao;
 
 /**
  * Servlet implementation class RegisterServlet

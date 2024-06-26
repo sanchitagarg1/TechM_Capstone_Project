@@ -20,12 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.files.entites.BookData;
-import com.files.entites.BookDataDao;
-import com.files.entites.Data;
-import com.files.entites.Datadao;
-
-import com.files.entites.TourPackage;
+import com.files.entities.BookData;
+import com.files.entities.BookDataDao;
+import com.files.entities.Data;
+import com.files.entities.Datadao;
+import com.files.entities.TourPackage;
 
 
 /**

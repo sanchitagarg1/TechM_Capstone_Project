@@ -1,4 +1,4 @@
-package com.files.entites;
+package com.files.entities;
 
 
 //------------------------------ Hibernate Code ------------------------------------------

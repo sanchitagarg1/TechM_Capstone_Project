@@ -1,4 +1,4 @@
-package com.files.entites;
+package com.files.entities;
 
 //import javax.persistence.Column;
 //import javax.persistence.Id;

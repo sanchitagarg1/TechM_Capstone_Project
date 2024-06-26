@@ -1,4 +1,4 @@
-<%@page import="com.files.entites.Datadao"%>
+<%@page import="com.files.entities.Datadao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:useBean id="user" class="com.files.entites.Data"/>
+<jsp:useBean id="user" class="com.files.entities.Data"/>
 <jsp:setProperty property="*" name="user"/>
 
 <%

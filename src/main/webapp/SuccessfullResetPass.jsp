@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="com.files.entites.Datadao"%>
-    <%@page import="com.files.entites.Data"%>
-    <jsp:useBean id="user" class="com.files.entites.Data"/>
+    <%@page import="com.files.entities.Datadao"%>
+    <%@page import="com.files.entities.Data"%>
+    <jsp:useBean id="user" class="com.files.entities.Data"/>
 	<jsp:setProperty property="*" name="user"/>
 <!DOCTYPE html>
 <html>

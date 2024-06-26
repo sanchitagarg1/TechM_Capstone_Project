@@ -1,5 +1,5 @@
-<%@page import="com.files.entites.Data"%>
-<%@page import="com.files.entites.Datadao"%>
+<%@page import="com.files.entities.Data"%>
+<%@page import="com.files.entities.Datadao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,10 +1,10 @@
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.files.entites.BookDataDao"%>
-<%@page import="com.files.entites.BookData"%>
-<%@page import="com.files.entites.Data"%>
-<%@page import="com.files.entites.Datadao"%>
+<%@page import="com.files.entities.BookDataDao"%>
+<%@page import="com.files.entities.BookData"%>
+<%@page import="com.files.entities.Data"%>
+<%@page import="com.files.entities.Datadao"%>
 <%@page import="java.util.List" %>
 <%@ page errorPage="InvalidAccess.jsp" %>
   

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.files.entites.TourPackage;
+import com.files.entities.TourPackage;
 
 /**
  * Servlet implementation class AddPackage

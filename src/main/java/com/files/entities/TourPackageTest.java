@@ -1,11 +1,11 @@
-package com.files.entites;
+package com.files.entities;
 
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.files.entites.TourPackage;
+import com.files.entities.TourPackage;
 
 public class TourPackageTest {
 

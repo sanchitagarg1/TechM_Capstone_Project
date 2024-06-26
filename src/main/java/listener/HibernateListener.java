@@ -1,10 +1,10 @@
 package listener;
 
-import com.files.entites.HibernateUtil;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+
+import com.files.entities.HibernateUtil;
 
 @WebListener
 public class HibernateListener implements ServletContextListener {

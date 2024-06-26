@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import javax.servlet.http.Part;
 
-import com.files.entites.Datadao;
+import com.files.entities.Datadao;
 
 /**
  * Servlet implementation class ProfileUpdateServlet

@@ -1,4 +1,4 @@
-package com.files.entites;
+package com.files.entities;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
